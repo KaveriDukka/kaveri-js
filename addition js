@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>kavi</title>
+</head>
+<body>
+
+    <h1>kavi</h1>
+    <script>
+        var x = 5;
+        x += 2;
+        console.log(x);
+    </script>
+</body>
+</html>
