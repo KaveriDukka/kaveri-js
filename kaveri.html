@@ -213,17 +213,17 @@
        <button id = "Click">ClickMe</button>
        <script>
        function filterCountries() {
-    const A = searchInput.value.toLowerCase();
-    const B = countryDropdown.B;
+    const filterValue = searchInput.value.toLowerCase();
+    const options = countryDropdown.options;
 
-    for (let i = 0; i < B.length; i++) {
-        const option = B[i];
-        const text = B.value.toLowerCase();
+    for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        const text = option.value.toLowerCase();
 
-        if (text.startsWith(A)) {
-            B.style.display = "block";
+        if (text.startsWith(filterValue)) {
+            option.style.display = "block";
         } else {
-            B.style.display = "none";
+            option.style.display = "none";
         }
     }
 }
