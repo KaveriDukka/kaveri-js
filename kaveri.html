@@ -10,9 +10,9 @@
        <h1 align= "Center">TABLE</h1>
        <hr/>
        <hr/>
-       <select>
-<option>choose your country</option> <option>text box       </option>
-<option> Country                                            </option>
+       <input type="text" id="searchInput" oninput="filterCountries()" placeholder="Search for a country...">
+       <select id="countryDropdown">
+<option>choose your country</option> 
 <option class="opt"> Afghanistan                            </option>
 <option class="opt"> Albania                                </option>
 <option class="opt"> Algeria                                </option>
@@ -209,28 +209,24 @@
 <option class="opt"> Zambia                                 </option>
 <option class="opt"> Zimbabwe								                 </option>
        </select>
-       <input type="text" id="search"/>
+    
        <button id = "Click">ClickMe</button>
        <script>
-       function myFunction() {
-              
-            console.log("Function is running")
-            var x = document.getElementById("search").value;
-            var element = [];
-            element = document.getElementsByClassName("opt");
-            console.log(element);
-            for (var i = 0; i < element.length; i++) {
-                var compare=ele[i].innerHTML;
-                if(option.substring(0,x.length)==x){
-                  console.log("It is working"); 
+       function filterCountries() {
+    const filterValue = searchInput.value.toLowerCase();
+    const options = countryDropdown.options;
 
-                }
-              
-              else{
-                element[i].innerHTML="";
-              }
-              }
-            }
+    for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        const text = option.value.toLowerCase();
+
+        if (text.startsWith(filterValue)) {
+            option.style.display = "block";
+        } else {
+            option.style.display = "none";
+        }
+    }
+}
       </script>
     </body>
 </html> 
